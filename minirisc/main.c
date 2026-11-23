@@ -3,7 +3,7 @@
 #include "platform.h"
 #include "minirisc.h"
 
-
+// teste
 int main(int argc, char *argv[])
 {
 	if (argc != 2) {
