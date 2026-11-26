@@ -5,12 +5,12 @@
 
 platform_t* platform_new()
 {
-	platform_t *platform = malloc(sizeof(platform_t));
+	platform_t *platform = calloc(1, sizeof(platform_t));
 	if (platform == NULL){
 		perror("malloc platform");
 		exit(EXIT_FAILURE);
 	}
-	platform->memory = malloc(32 * 1024 * 256 * sizeof(uint32_t));
+	platform->memory = calloc(32, 1024 * 256 * sizeof(uint32_t));
 	if (platform->memory == NULL){
 		perror("malloc platform->memory");
 		exit(EXIT_FAILURE);
@@ -21,7 +21,12 @@ platform_t* platform_new()
 
 void platform_free(platform_t *platform)
 {
-	// TODO
+	if (platform == NULL) {
+		perror("platform NULL");
+		exit(EXIT_FAILURE);
+	}
+	free(platform->memory);
+	free(platform);
 }
 
 
