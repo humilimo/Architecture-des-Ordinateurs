@@ -7,12 +7,12 @@ platform_t* platform_new()
 {
 	platform_t *platform = calloc(1, sizeof(platform_t));
 	if (platform == NULL){
-		perror("malloc platform");
+		perror("calloc platform");
 		exit(EXIT_FAILURE);
 	}
 	platform->memory = calloc(32, 1024 * 256 * sizeof(uint32_t));
 	if (platform->memory == NULL){
-		perror("malloc platform->memory");
+		perror("calloc platform->memory");
 		exit(EXIT_FAILURE);
 	}
 	return platform;
