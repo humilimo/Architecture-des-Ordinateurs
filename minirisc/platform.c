@@ -22,8 +22,7 @@ platform_t* platform_new()
 void platform_free(platform_t *platform)
 {
 	if (platform == NULL) {
-		perror("platform NULL");
-		exit(EXIT_FAILURE);
+		return;
 	}
 	free(platform->memory);
 	free(platform);
