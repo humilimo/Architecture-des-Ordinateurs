@@ -6,6 +6,15 @@
 platform_t* platform_new()
 {
 	platform_t *platform = malloc(sizeof(platform_t));
+	if (platform == NULL){
+		perror("malloc platform");
+		exit(EXIT_FAILURE);
+	}
+	platform->memory = malloc(sizeof(uint32_t));
+	if (platform->memory == NULL){
+		perror("malloc platform->memory");
+		exit(EXIT_FAILURE);
+	}
 	return platform;
 }
 
