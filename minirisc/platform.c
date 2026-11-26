@@ -5,7 +5,8 @@
 
 platform_t* platform_new()
 {
-	// TODO
+	platform_t *platform = malloc(sizeof(platform_t));
+	return platform;
 }
 
 
