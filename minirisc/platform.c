@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "platform.h"
-#define MEGABYTE (1024 * 256 * sizeof(uint32_t))
+#define MEGABYTE (1024 * 1024)
 
 
 platform_t* platform_new()
