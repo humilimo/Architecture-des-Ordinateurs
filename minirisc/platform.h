@@ -1,5 +1,6 @@
 #ifndef MINIRISC_PLATFORM_H
 #define MINIRISC_PLATFORM_H
+#define MEGABYTE (1024 * 1024)
 
 #include <inttypes.h>
 
