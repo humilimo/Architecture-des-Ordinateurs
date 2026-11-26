@@ -1,4 +1,3 @@
-#include <cstdint>
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -43,11 +42,11 @@ int platform_load_program(platform_t *plt, const char *file_name)
 	long file_size = ftell(f);
 	fseek(f, 0, SEEK_SET);
 	if (file_size < 0 || file_size > 32 * MEGABYTE){
-		perror("ftell f")
+		perror("ftell f");
 		fclose(f);
 		return -1;
 	}
-	fread(plt->memory, sizeof(uint32_t), file_size, f)
+	fread(plt->memory, sizeof(uint32_t), file_size, f);
 	if (plt->memory < file_size){
 		perror("fread f");
 		fclose(f);
